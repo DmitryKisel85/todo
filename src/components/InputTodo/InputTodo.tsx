@@ -1,4 +1,4 @@
-import { useRef, useLayoutEffect } from "react";
+import { useRef, useEffect } from "react";
 import { useAppDispatch } from "@hooks/hooks";
 import { motion } from "framer-motion";
 import { v4 as uuidv4 } from "uuid";
@@ -13,12 +13,12 @@ const InputTodo: React.FC = () => {
 
 	const inputRef = useRef<HTMLInputElement | null>(null);
 
-	useLayoutEffect(() => {
+	useEffect(() => {
 		inputRef.current?.focus();
-	});
+	}, []);
 
 	//добавляем туду
-	const handleSubmit = (e: React.ChangeEvent<HTMLFormElement>): void => {
+	const handleSubmit = (e: React.ChangeEvent<HTMLFormElement>) => {
 		e.preventDefault();
 
 		let userInput = inputRef.current?.value;
@@ -33,8 +33,9 @@ const InputTodo: React.FC = () => {
 		};
 
 		dispatch(addTodo(newTodo));
-
+		console.log(inputRef.current);
 		if (inputRef.current) {
+			inputRef.current.focus();
 			inputRef.current.value = "";
 		}
 	};
@@ -42,7 +43,11 @@ const InputTodo: React.FC = () => {
 	return (
 		<form className={styles.inputWrapper} onSubmit={handleSubmit}>
 			<input type='text' className={styles.inputMain} placeholder='What are we going to do?' ref={inputRef} />
-			<motion.button type='submit' whileTap={{ scale: 0.95 }} whileHover={{ cursor: "pointer", scale: 1.1, filter: "brightness(1.5)" }} className={styles.btnAdd}>
+			<motion.button
+				type='submit'
+				whileTap={{ scale: 0.95 }}
+				whileHover={{ cursor: "pointer", scale: 1.1, filter: "brightness(1.5)" }}
+				className={styles.btnAdd}>
 				<FaPlus className={styles.addIcon} />
 			</motion.button>
 		</form>
