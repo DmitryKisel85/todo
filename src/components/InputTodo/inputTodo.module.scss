@@ -1,0 +1,48 @@
+@import "@styles/variables.scss";
+
+.inputWrapper {
+	width: 100%;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	background-color: #fff;
+	border-radius: 5px;
+}
+
+.inputMain {
+	width: 100%;
+	padding: 20px;
+	font-size: 24px;
+	color: $inputColor;
+
+	&::placeholder {
+		font-size: 20px;
+		opacity: 0.5;
+	}
+}
+
+.addIcon {
+	display: block;
+	margin-right: 20px;
+	color: $inputColor;
+	font-size: 36px;
+}
+
+@media only screen and (max-width: $mobile) {
+	.inputWrapper {
+		margin-bottom: 15px;
+	}
+
+	.inputMain {
+		font-size: 22px;
+		padding: 20px 10px;
+
+		&::placeholder {
+			font-size: 18px;
+		}
+	}
+
+	.btnAdd svg {
+		margin-right: 10px;
+	}
+}
