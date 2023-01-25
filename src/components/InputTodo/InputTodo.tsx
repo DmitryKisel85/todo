@@ -33,9 +33,12 @@ const InputTodo: React.FC = () => {
 		};
 
 		dispatch(addTodo(newTodo));
-		console.log(inputRef.current);
+
 		if (inputRef.current) {
-			inputRef.current.focus();
+			setTimeout(() => {
+				inputRef.current?.focus();
+			}, 0);
+
 			inputRef.current.value = "";
 		}
 	};
