@@ -1,6 +1,6 @@
 import React, { useState, useRef, useLayoutEffect } from "react";
 
-import { useAppDispatch, useAppSelector } from "../../hooks/hooks";
+import { useAppDispatch, useAppSelector } from "hooks/hooks";
 
 import { motion } from "framer-motion";
 
@@ -8,10 +8,10 @@ import TextareaAutosize from "react-textarea-autosize";
 
 import { FaEdit, FaCheck, FaTimes } from "react-icons/fa";
 
-import { toggleCompleted, editTodo, deleteTodo } from "@store/todos/todosSlice";
-import { todoByIdSelector } from "@store/todos/todosSelector";
+import { toggleCompleted, editTodo, deleteTodo } from "store/todos/todosSlice";
+import { todoByIdSelector } from "store/todos/todosSelector";
 
-import Button from "@components/Button";
+import Button from "components/Button";
 import styles from "./todoListItem.module.scss";
 
 // объект с настройками анимации Framer Motion
@@ -66,10 +66,30 @@ const TodoListItem: React.FC<ITodoListItemProps> = ({ id }) => {
 	};
 
 	return (
-		<motion.li className={styles.todoItem} key={id} initial='hidden' animate='visible' exit='hidden' variants={variants} layoutId={id}>
-			<input type='checkbox' id={`btn-complete-${id}`} className={styles.btnComplete} onChange={handleChange} defaultChecked={completed} />
+		<motion.li
+			className={styles.todoItem}
+			key={id}
+			initial='hidden'
+			animate='visible'
+			exit='hidden'
+			variants={variants}
+			layoutId={id}>
+			<input
+				type='checkbox'
+				id={`btn-complete-${id}`}
+				className={styles.btnComplete}
+				onChange={handleChange}
+				defaultChecked={completed}
+			/>
 			<label htmlFor={`btn-complete-${id}`}></label>
-			<TextareaAutosize className={styles.description} readOnly={readOnlyState} value={description} onDoubleClick={() => setReadOnlyState(false)} onChange={handleEdit} ref={textAreaRef} onBlur={validateEditing}></TextareaAutosize>
+			<TextareaAutosize
+				className={styles.description}
+				readOnly={readOnlyState}
+				value={description}
+				onDoubleClick={() => setReadOnlyState(false)}
+				onChange={handleEdit}
+				ref={textAreaRef}
+				onBlur={validateEditing}></TextareaAutosize>
 
 			{readOnlyState ? (
 				<Button className={styles.btnTodolistitem} key='edit' onClick={() => setReadOnlyState(false)}>

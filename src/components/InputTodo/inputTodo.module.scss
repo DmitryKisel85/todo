@@ -1,6 +1,6 @@
-@import "@styles/variables.scss";
+@import "styles/variables.scss";
 
-.inputWrapper {
+.form {
 	width: 100%;
 	display: flex;
 	justify-content: space-between;
@@ -9,7 +9,7 @@
 	border-radius: 5px;
 }
 
-.inputMain {
+.input {
 	width: 100%;
 	padding: 20px;
 	font-size: 24px;
@@ -21,7 +21,7 @@
 	}
 }
 
-.addIcon {
+.icon {
 	display: block;
 	margin-right: 20px;
 	color: $inputColor;
@@ -29,11 +29,11 @@
 }
 
 @media only screen and (max-width: $mobile) {
-	.inputWrapper {
+	.form {
 		margin-bottom: 15px;
 	}
 
-	.inputMain {
+	.input {
 		font-size: 22px;
 		padding: 20px 10px;
 
@@ -42,7 +42,7 @@
 		}
 	}
 
-	.btnAdd svg {
+	.btn svg {
 		margin-right: 10px;
 	}
 }

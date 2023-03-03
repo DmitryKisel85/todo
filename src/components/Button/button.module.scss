@@ -1,74 +1,74 @@
-@import '@styles/variables.scss';
+@import "styles/variables.scss";
 
 .btnGeneral {
-    font-size: 18px;
-    text-transform: uppercase;
-    color: $textColor;
-    padding: 5px 15px;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: all 0.3s ease-out;
-    border-bottom: 1px solid transparent;
+	font-size: 18px;
+	text-transform: uppercase;
+	color: $textColor;
+	padding: 5px 15px;
+	border-radius: 5px;
+	cursor: pointer;
+	transition: all 0.3s ease-out;
+	border-bottom: 1px solid transparent;
 }
 
 .btnClear {
-    composes: btnGeneral;
+	composes: btnGeneral;
 }
 
 .btnClear:active {
-    transform: translateY(3px);
+	transform: translateY(3px);
 }
 
 .btnFilter {
-    composes: btnGeneral;
-    opacity: 0.5;
+	composes: btnGeneral;
+	opacity: 0.5;
 }
 
 .btnFilterActive {
-    composes: btnGeneral;
-    opacity: 1;
+	composes: btnGeneral;
+	opacity: 1;
 }
 
 .btnTodolistitem {
-    color: $textColor;
+	color: $textColor;
 }
 
 .btnComplete {
-    position: absolute;
-    z-index: -1;
-    opacity: 0;
+	position: absolute;
+	z-index: -1;
+	opacity: 0;
 }
 
 .btnComplete + label {
-    display: inline-flex;
-    align-items: center;
-    user-select: none;
-    cursor: pointer;
+	display: inline-flex;
+	align-items: center;
+	user-select: none;
+	cursor: pointer;
 }
 
 // HOVER STYLES
 
 @media (hover: hover) and (pointer: fine) {
-    .btnClear:hover {
-        outline: 1px solid $textColor;
-    }
+	.btnClear:hover {
+		outline: 1px solid $textColor;
+	}
 
-    .btnFilter:hover {
-        opacity: 1;
-    }
+	.btnFilter:hover {
+		opacity: 1;
+	}
 
-    .btnTodolistitem:hover {
-        opacity: 1 !important;
-        transform: scale(1.1);
-        transition: all 0.2s ease-out;
-        cursor: pointer;
-    }
+	.btnTodolistitem:hover {
+		opacity: 1 !important;
+		transform: scale(1.1);
+		transition: all 0.2s ease-out;
+		cursor: pointer;
+	}
 }
 
 // MEDIA STYLES
 
 @media only screen and (max-width: $mobile) {
-    .btnFilter {
-        padding: 5px;
-    }
+	.btnFilter {
+		padding: 5px;
+	}
 }

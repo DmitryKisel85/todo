@@ -1,24 +1,33 @@
 {
-	"extends": "./tsconfig.path.json",
 	"compilerOptions": {
 		"target": "ES2016",
 		"lib": ["dom", "dom.iterable", "esnext"],
-		"allowJs": true,
+		"jsx": "react-jsx",
+		"module": "ES6",
+		"moduleResolution": "node",
 		"skipLibCheck": true,
 		"esModuleInterop": true,
 		"allowSyntheticDefaultImports": true,
 		"strict": true,
-		"forceConsistentCasingInFileNames": true,
-		"module": "ES6",
-		"moduleResolution": "node",
-		"resolveJsonModule": true,
+		"removeComments": true,
 		"isolatedModules": true,
-		"noEmit": true,
-		"jsx": "react-jsx",
+		"forceConsistentCasingInFileNames": true,
+		"resolveJsonModule": true,
+		"noImplicitReturns": true,
 		"noUnusedLocals": true,
 		"noUnusedParameters": true,
 		"noFallthroughCasesInSwitch": true,
-		"allowUnreachableCode": true
+		"allowUnreachableCode": false,
+		"baseUrl": "./src",
+		"paths": {
+			"@components/*": ["components/*"],
+			"@services/*": ["services/*"],
+			"@store/*": ["store/*"],
+			"@styles/*": ["styles/*"],
+			"@hooks/*": ["hooks/*"],
+			"@utils/*": ["utils/*"]
+		}
 	},
-	"include": ["src"]
+	"include": ["src"],
+	"exclude": ["node_modules"]
 }

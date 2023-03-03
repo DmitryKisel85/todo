@@ -1,7 +1,7 @@
-import { useAppDispatch } from "@hooks/hooks";
-import { clearAllTodos, clearCompletedTodos } from "@store/todos/todosSlice";
+import { useAppDispatch } from "hooks/hooks";
+import { clearAllTodos, clearCompletedTodos } from "store/todos/todosSlice";
 
-import Button from "@components/Button";
+import Button from "components/Button";
 
 import styles from "./clearBlock.module.scss";
 

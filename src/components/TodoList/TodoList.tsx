@@ -1,8 +1,8 @@
-import { useAppSelector } from "../../hooks/hooks";
+import { useAppSelector } from "hooks/hooks";
 
-import { filteredTodosSelector } from "@store/todos/todosSelector";
+import { filteredTodosSelector } from "store/todos/todosSelector";
 
-import TodoListItem from "@components/TodoListItem";
+import TodoListItem from "components/TodoListItem";
 
 import styles from "./todoList.module.scss";
 

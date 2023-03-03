@@ -1,14 +1,15 @@
 import { useRef, useEffect } from "react";
-import { useAppDispatch } from "@hooks/hooks";
 import { motion } from "framer-motion";
 import { v4 as uuidv4 } from "uuid";
+
+import { addTodo } from "store/todos/todosSlice";
+import { useAppDispatch } from "hooks/hooks";
+
 import { FaPlus } from "react-icons/fa";
 
-import { addTodo } from "@store/todos/todosSlice";
+import s from "./inputTodo.module.scss";
 
-import styles from "./inputTodo.module.scss";
-
-const InputTodo: React.FC = () => {
+const InputTodo = () => {
 	const dispatch = useAppDispatch();
 
 	const inputRef = useRef<HTMLInputElement | null>(null);
@@ -17,14 +18,14 @@ const InputTodo: React.FC = () => {
 		inputRef.current?.focus();
 	}, []);
 
-	//добавляем туду
 	const handleSubmit = (e: React.ChangeEvent<HTMLFormElement>) => {
 		e.preventDefault();
 
-		let userInput = inputRef.current?.value;
+		if (!inputRef.current) throw Error("inputRef is not assigned");
 
-		// проверка на пустую строку и пробелы
-		if (!userInput || userInput.match(/^[ ]+$/)) return;
+		let userInput = inputRef.current.value;
+
+		if (userInput.match(/^[ ]+$/)) return;
 
 		const newTodo = {
 			id: uuidv4(),
@@ -34,24 +35,22 @@ const InputTodo: React.FC = () => {
 
 		dispatch(addTodo(newTodo));
 
-		if (inputRef.current) {
-			setTimeout(() => {
-				inputRef.current?.focus();
-			}, 0);
+		setTimeout(() => {
+			inputRef.current?.focus();
+		}, 0);
 
-			inputRef.current.value = "";
-		}
+		inputRef.current.value = "";
 	};
 
 	return (
-		<form className={styles.inputWrapper} onSubmit={handleSubmit}>
-			<input type='text' className={styles.inputMain} placeholder='What are we going to do?' ref={inputRef} />
+		<form className={s.form} onSubmit={handleSubmit}>
+			<input type='text' className={s.input} placeholder='What are we going to do?' ref={inputRef} />
 			<motion.button
 				type='submit'
 				whileTap={{ scale: 0.95 }}
 				whileHover={{ cursor: "pointer", scale: 1.1, filter: "brightness(1.5)" }}
-				className={styles.btnAdd}>
-				<FaPlus className={styles.addIcon} />
+				className={s.btn}>
+				<FaPlus className={s.icon} />
 			</motion.button>
 		</form>
 	);
