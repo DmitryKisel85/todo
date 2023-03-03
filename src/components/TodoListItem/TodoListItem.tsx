@@ -1,6 +1,6 @@
 import React, { useState, useRef, useLayoutEffect } from "react";
 
-import { useAppDispatch, useAppSelector } from "hooks/hooks";
+import { useAppDispatch, useAppSelector } from "hooks";
 
 import { motion } from "framer-motion";
 

@@ -1,6 +1,6 @@
 import classNames from "classnames";
 
-import { useAppDispatch, useAppSelector } from "hooks/hooks";
+import { useAppDispatch, useAppSelector } from "hooks";
 
 import { activeFilterChanged } from "store/filter/filterSlice";
 

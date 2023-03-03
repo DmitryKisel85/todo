@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import { v4 as uuidv4 } from "uuid";
 
 import { addTodo } from "store/todos/todosSlice";
-import { useAppDispatch } from "hooks/hooks";
+import { useAppDispatch } from "hooks";
 
 import { FaPlus } from "react-icons/fa";
 

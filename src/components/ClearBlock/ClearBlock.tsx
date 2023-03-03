@@ -1,4 +1,4 @@
-import { useAppDispatch } from "hooks/hooks";
+import { useAppDispatch } from "hooks";
 import { clearAllTodos, clearCompletedTodos } from "store/todos/todosSlice";
 
 import Button from "components/Button";

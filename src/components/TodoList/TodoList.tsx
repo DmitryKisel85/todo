@@ -1,4 +1,4 @@
-import { useAppSelector } from "hooks/hooks";
+import { useAppSelector } from "hooks";
 
 import { filteredTodosSelector } from "store/todos/todosSelector";
 

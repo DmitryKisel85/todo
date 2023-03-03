@@ -1,4 +1,4 @@
-import { useAppSelector } from "hooks/hooks";
+import { useAppSelector } from "hooks";
 import { todosLeftSelector } from "store/todos/todosSelector";
 
 import styles from "./todosCounter.module.scss";
