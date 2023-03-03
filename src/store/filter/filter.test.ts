@@ -1,5 +1,5 @@
 import { RootState } from "@store/index";
-import filterReducer, { initialState, activeFilterChanged } from "@store/filter/filterSlice";
+import filterReducer, { initialState, changeActiveFilter } from "@store/filter/filterSlice";
 import { selectActiveFilter } from "@store/filter/filterSelector";
 
 describe("tests for filterSlice", () => {
@@ -11,9 +11,9 @@ describe("tests for filterSlice", () => {
 
 describe("tests for filter reducer", () => {
 	it("should change active filter", () => {
-		const result1 = filterReducer(initialState, activeFilterChanged("active"));
+		const result1 = filterReducer(initialState, changeActiveFilter("active"));
 		expect(result1).toEqual({ activeFilter: "active" });
-		const result2 = filterReducer(initialState, activeFilterChanged("completed"));
+		const result2 = filterReducer(initialState, changeActiveFilter("completed"));
 		expect(result2).toEqual({ activeFilter: "completed" });
 	});
 });

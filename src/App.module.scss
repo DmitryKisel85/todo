@@ -2,18 +2,18 @@
 @import "styles/variables.scss";
 
 * {
+	box-sizing: border-box;
 	margin: 0;
 	padding: 0;
-	box-sizing: border-box;
 	font-family: "Rubik", sans-serif;
 	font-size: 20px;
 }
 
 body {
-	width: 100%;
-	color: $textColor;
 	display: flex;
 	justify-content: center;
+	width: 100%;
+	color: $textColor;
 }
 
 button,
@@ -21,35 +21,35 @@ input,
 textarea {
 	border: none;
 	outline: none;
-	appearance: none;
 	background: transparent;
+	appearance: none;
 }
 
 textarea {
 	resize: none;
 }
 
-.App {
-	background: linear-gradient(to bottom, #46549e, #89cbf0);
-	border-radius: 10px;
-	width: 500px;
-	margin: 50px auto;
-	padding: 0 15px;
+.root {
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
+	width: 500px;
+	margin: 50px auto;
+	padding: 0 15px;
 	box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+	border-radius: 10px;
+	background: linear-gradient(to bottom, #46549e, #89cbf0);
 }
 
 @media only screen and (max-width: $mobile) {
-	.App {
+	.root {
 		width: 100%;
 	}
 }
 
 @media only screen and (max-width: $mobileSmall) {
-	.App {
-		margin: 0 auto;
+	.root {
 		height: 100vh;
+		margin: 0 auto;
 	}
 }

@@ -1,12 +1,17 @@
 @import "styles/variables.scss";
-@import "components/Button/button.module.scss";
 
-.clearBlock {
+.root {
 	padding: 15px 0;
 }
 
+@media (hover: hover) and (pointer: fine) {
+	.btn:hover {
+		outline: 1px solid $textColor;
+	}
+}
+
 @media only screen and (max-width: $mobileSmall) {
-	.clearBlock {
+	.root {
 		display: flex;
 		flex-direction: column;
 	}

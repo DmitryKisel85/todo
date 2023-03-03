@@ -1,11 +1,11 @@
 @import "styles/variables.scss";
 
-.todoCount {
+.root {
 	padding: 15px 0;
 }
 
 @media only screen and (max-width: $mobile) {
-	.todoCount {
+	.root {
 		font-size: 18px;
 	}
 }

@@ -1,6 +1,6 @@
 import { screen } from "@testing-library/react";
 import { renderWithContext } from "@utils/test-utils";
-import App from "./App";
+import { App } from "./App";
 
 it("renders the correct initial DOM", () => {
 	renderWithContext(<App />);

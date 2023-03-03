@@ -4,15 +4,18 @@ import { filteredTodosSelector } from "store/todos/todosSelector";
 
 import { TodoListItem } from "components/TodoListItem";
 
-import styles from "./todoList.module.scss";
+import s from "./todoList.module.scss";
 
-const TodoList: React.FC = () => {
+const TodoList = () => {
 	const filteredTodos = useAppSelector(filteredTodosSelector);
 
-	const renderedTodos = filteredTodos.map(({ id }) => {
-		return <TodoListItem key={id} id={id} />;
-	});
-	return <ul className={styles.todosWrapper}>{renderedTodos}</ul>;
+	return (
+		<ul className={s.root}>
+			{filteredTodos.map(({ id }) => {
+				return <TodoListItem key={id} id={id} />;
+			})}
+		</ul>
+	);
 };
 
 export { TodoList };

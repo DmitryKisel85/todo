@@ -4,11 +4,11 @@ import { FilterBlock } from "components/FilterBlock";
 import { ClearBlock } from "components/ClearBlock";
 import { TodoList } from "components/TodoList";
 
-import styles from "./mainBlock.module.scss";
+import s from "./mainBlock.module.scss";
 
-const MainBlock: React.FC = () => {
+const MainBlock = () => {
 	return (
-		<main className={styles.root}>
+		<main className={s.root}>
 			<InputTodo />
 			<TodoList />
 			<TodosCounter />

@@ -1,12 +1,16 @@
+import cx from "classnames";
+
+import s from "./button.module.scss";
+
 interface IButtonProps {
 	children: React.ReactNode;
-	onClick: () => void;
+	handleClick: () => void;
 	className: string;
 }
 
-const Button: React.FC<IButtonProps> = ({ children, onClick, className }) => {
+const Button = ({ children, handleClick, className }: IButtonProps) => {
 	return (
-		<button onClick={onClick} className={className}>
+		<button onClick={handleClick} className={cx(s.btn, className)}>
 			{children}
 		</button>
 	);

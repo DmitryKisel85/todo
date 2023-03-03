@@ -1,9 +1,9 @@
-import styles from "./header.module.scss";
+import s from "./header.module.scss";
 
-const Header: React.FC = () => {
+const Header = () => {
 	return (
-		<header className={styles.header}>
-			<h1 className={styles.mainTitle}>THINGS TO DO</h1>
+		<header className={s.root}>
+			<h1 className={s.title}>THINGS TO DO</h1>
 		</header>
 	);
 };

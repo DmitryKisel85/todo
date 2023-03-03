@@ -1,27 +1,27 @@
 @import "styles/variables.scss";
 
-.mainTitle {
-	font-weight: 300;
-	font-size: 60px;
-	text-align: center;
-}
-
-.header {
+.root {
 	padding: 35px 0;
 }
 
+.title {
+	font-size: 60px;
+	font-weight: 300;
+	text-align: center;
+}
+
 @media only screen and (max-width: $tablet) {
-	.mainTitle {
+	.title {
 		font-size: 48px;
 	}
 }
 
 @media only screen and (max-width: $mobile) {
-	.mainTitle {
+	.title {
 		font-size: 36px;
 	}
 
-	.header {
+	.root {
 		padding: 25px 0;
 	}
 }

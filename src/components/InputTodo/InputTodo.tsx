@@ -43,7 +43,7 @@ const InputTodo = () => {
 	};
 
 	return (
-		<form className={s.form} onSubmit={handleSubmit}>
+		<form className={s.root} onSubmit={handleSubmit}>
 			<input type='text' className={s.input} placeholder='What are we going to do?' ref={inputRef} />
 			<motion.button
 				type='submit'

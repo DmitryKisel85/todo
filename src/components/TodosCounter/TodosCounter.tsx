@@ -1,12 +1,12 @@
-import { useAppSelector } from "hooks";
 import { todosLeftSelector } from "store/todos/todosSelector";
+import { useAppSelector } from "hooks";
 
-import styles from "./todosCounter.module.scss";
+import s from "./todosCounter.module.scss";
 
-const TodosCounter: React.FC = () => {
+const TodosCounter = () => {
 	const todosLeftToDo = useAppSelector(todosLeftSelector);
 
-	return <div className={styles.todoCount}>Things left to do: {todosLeftToDo}</div>;
+	return <div className={s.root}>Things left to do: {todosLeftToDo}</div>;
 };
 
 export { TodosCounter };

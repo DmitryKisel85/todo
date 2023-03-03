@@ -1,12 +1,12 @@
 @import "styles/variables.scss";
 
-.form {
-	width: 100%;
+.root {
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-	background-color: #fff;
+	width: 100%;
 	border-radius: 5px;
+	background-color: #fff;
 }
 
 .input {
@@ -16,26 +16,26 @@
 	color: $inputColor;
 
 	&::placeholder {
-		font-size: 20px;
 		opacity: 0.5;
+		font-size: 20px;
 	}
 }
 
 .icon {
 	display: block;
 	margin-right: 20px;
-	color: $inputColor;
 	font-size: 36px;
+	color: $inputColor;
 }
 
 @media only screen and (max-width: $mobile) {
-	.form {
+	.root {
 		margin-bottom: 15px;
 	}
 
 	.input {
-		font-size: 22px;
 		padding: 20px 10px;
+		font-size: 22px;
 
 		&::placeholder {
 			font-size: 18px;

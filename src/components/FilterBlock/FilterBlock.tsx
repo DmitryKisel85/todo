@@ -1,41 +1,35 @@
-import classNames from "classnames";
+import cx from "classnames";
 
 import { useAppDispatch, useAppSelector } from "hooks";
 
-import { activeFilterChanged } from "store/filter/filterSlice";
-
+import { changeActiveFilter } from "store/filter/filterSlice";
 import { selectActiveFilter } from "store/filter/filterSelector";
 
 import { Button } from "components/Button";
-import styles from "./filterBlock.module.scss";
 
-const FilterBlock: React.FC = () => {
+import s from "./filterBlock.module.scss";
+
+const FilterBlock = () => {
 	const dispatch = useAppDispatch();
 
 	const activeFilter = useAppSelector(selectActiveFilter);
 
-	// смена активного фильтра в зависимости от нажатой кнопки
 	const handleChangeFilter = (filter: string) => {
-		dispatch(activeFilterChanged(filter));
+		dispatch(changeActiveFilter(filter));
 	};
+
+	const btns = ["all", "active", "completed"];
 
 	return (
 		<div>
-			<Button
-				className={classNames(styles.btnFilter, { [styles.btnFilterActive]: activeFilter === "all" })}
-				onClick={() => handleChangeFilter("all")}>
-				All
-			</Button>
-			<Button
-				className={classNames(styles.btnFilter, { [styles.btnFilterActive]: activeFilter === "active" })}
-				onClick={() => handleChangeFilter("active")}>
-				Active
-			</Button>
-			<Button
-				className={classNames(styles.btnFilter, { [styles.btnFilterActive]: activeFilter === "completed" })}
-				onClick={() => handleChangeFilter("completed")}>
-				Completed
-			</Button>
+			{btns.map((btn) => (
+				<Button
+					key={btn}
+					className={cx(s.btn, { [s.btnActive]: btn === activeFilter })}
+					handleClick={() => handleChangeFilter(btn)}>
+					{btn}
+				</Button>
+			))}
 		</div>
 	);
 };

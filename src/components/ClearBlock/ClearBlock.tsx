@@ -1,29 +1,28 @@
 import { useAppDispatch } from "hooks";
+
 import { clearAllTodos, clearCompletedTodos } from "store/todos/todosSlice";
 
 import { Button } from "components/Button";
 
-import styles from "./clearBlock.module.scss";
+import s from "./clearBlock.module.scss";
 
-const ClearBlock: React.FC = () => {
+const ClearBlock = () => {
 	const dispatch = useAppDispatch();
 
-	// удаление всех туду
 	const handleClearAllTodos = () => {
 		dispatch(clearAllTodos());
 	};
 
-	// удаление завершенных туду
 	const handleClearCompletedTodos = () => {
 		dispatch(clearCompletedTodos());
 	};
 
 	return (
-		<div className={styles.clearBlock}>
-			<Button className={styles.btnClear} onClick={handleClearAllTodos}>
+		<div className={s.root}>
+			<Button className={s.btn} handleClick={handleClearAllTodos}>
 				Clear All
 			</Button>
-			<Button className={styles.btnClear} onClick={handleClearCompletedTodos}>
+			<Button className={s.btn} handleClick={handleClearCompletedTodos}>
 				Clear Completed
 			</Button>
 		</div>

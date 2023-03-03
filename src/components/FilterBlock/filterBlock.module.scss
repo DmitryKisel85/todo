@@ -1,1 +1,21 @@
-@import "components/Button/button.module.scss";
+@import "styles/variables.scss";
+
+.btn {
+	opacity: 0.5;
+}
+
+.btnActive {
+	opacity: 1;
+}
+
+@media (hover: hover) and (pointer: fine) {
+	.btn:hover {
+		opacity: 1;
+	}
+}
+
+@media only screen and (max-width: $mobile) {
+	.btn {
+		padding: 5px;
+	}
+}
