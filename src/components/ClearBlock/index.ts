@@ -1,1 +1,1 @@
-export { default } from "./ClearBlock";
+export * from "./ClearBlock";

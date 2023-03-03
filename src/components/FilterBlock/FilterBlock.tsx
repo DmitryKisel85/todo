@@ -6,7 +6,7 @@ import { activeFilterChanged } from "store/filter/filterSlice";
 
 import { selectActiveFilter } from "store/filter/filterSelector";
 
-import Button from "components/Button";
+import { Button } from "components/Button";
 import styles from "./filterBlock.module.scss";
 
 const FilterBlock: React.FC = () => {
@@ -40,4 +40,4 @@ const FilterBlock: React.FC = () => {
 	);
 };
 
-export default FilterBlock;
+export { FilterBlock };

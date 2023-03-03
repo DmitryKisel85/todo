@@ -56,4 +56,4 @@ const InputTodo = () => {
 	);
 };
 
-export default InputTodo;
+export { InputTodo };

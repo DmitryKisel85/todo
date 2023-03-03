@@ -11,7 +11,7 @@ import { FaEdit, FaCheck, FaTimes } from "react-icons/fa";
 import { toggleCompleted, editTodo, deleteTodo } from "store/todos/todosSlice";
 import { todoByIdSelector } from "store/todos/todosSelector";
 
-import Button from "components/Button";
+import { Button } from "components/Button";
 import styles from "./todoListItem.module.scss";
 
 // объект с настройками анимации Framer Motion
@@ -108,4 +108,4 @@ const TodoListItem: React.FC<ITodoListItemProps> = ({ id }) => {
 	);
 };
 
-export default TodoListItem;
+export { TodoListItem };

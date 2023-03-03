@@ -1,1 +1,1 @@
-export { default } from "./MainBlock";
+export * from "./MainBlock";

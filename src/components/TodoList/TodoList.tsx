@@ -2,7 +2,7 @@ import { useAppSelector } from "hooks";
 
 import { filteredTodosSelector } from "store/todos/todosSelector";
 
-import TodoListItem from "components/TodoListItem";
+import { TodoListItem } from "components/TodoListItem";
 
 import styles from "./todoList.module.scss";
 
@@ -15,4 +15,4 @@ const TodoList: React.FC = () => {
 	return <ul className={styles.todosWrapper}>{renderedTodos}</ul>;
 };
 
-export default TodoList;
+export { TodoList };

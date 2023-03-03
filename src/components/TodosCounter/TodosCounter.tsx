@@ -9,4 +9,4 @@ const TodosCounter: React.FC = () => {
 	return <div className={styles.todoCount}>Things left to do: {todosLeftToDo}</div>;
 };
 
-export default TodosCounter;
+export { TodosCounter };
